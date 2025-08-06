@@ -3,8 +3,7 @@ extends Node2D
 var test_array: Array[String] = ["Test", "Hello", "Stuff"]
 
 func _ready():
-	for i in test_array:
-		print(i)
+	pass
 	
 func _process(delta):
 	$Logo.rotation_degrees += 60 * delta
@@ -13,4 +12,6 @@ func _process(delta):
 		$Logo.pos.x = 0
 		
 	#print(Input.is_action_pressed("left"))
-		
+
+func test_function():
+	print("This is a test function")

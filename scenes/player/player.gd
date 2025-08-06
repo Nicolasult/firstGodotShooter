@@ -1,5 +1,8 @@
 extends Node2D
 
+func _ready():
+	pass
+
 func _process(delta):
 	
 	# input
@@ -13,3 +16,4 @@ func _process(delta):
 	# grenade shooting input
 	if Input.is_action_just_pressed("secondary action"):
 		print("Shoot grenade")
+	
