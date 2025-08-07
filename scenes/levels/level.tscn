@@ -11,7 +11,11 @@ script = ExtResource("1_b2cq8")
 position = Vector2(511, -543)
 
 [node name="Player" parent="." instance=ExtResource("2_b2cq8")]
-position = Vector2(565, 475)
+position = Vector2(565, 589)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(0.6, 0.6)
+position_smoothing_enabled = true
 
 [node name="Projectiles" type="Node2D" parent="."]
 
