@@ -8,9 +8,11 @@ func _on_gate_player_entered_gate(body) -> void:
 	print(body)
 
 
-func _on_player_player_shot_laser(pos) -> void:
-	var laser = laser_scene.instantiate()
+func _on_player_player_shot_laser(pos, direction) -> void:
+	var laser = laser_scene.instantiate() as Area2D
 	laser.position = pos
+	laser.rotation_degrees = rad_to_deg(direction.angle()) + 90
+	laser.direction = direction
 	$Projectiles.add_child(laser)
 
 
