@@ -3,6 +3,9 @@ extends CharacterBody2D
 var can_laser: bool = true
 var can_grenade: bool = true
 
+signal player_shot_laser
+signal player_shot_grenade
+
 func _ready():
 	pass
 
@@ -18,12 +21,14 @@ func _process(_delta):
 		print("Shoot laser")
 		can_laser = false
 		$LaserTimer.start()
+		player_shot_laser.emit()
 		
 	# grenade shooting input
 	if Input.is_action_just_pressed("secondary action") and can_grenade:
 		print("Shoot grenade")
 		can_grenade = false
 		$GrenadeTimer.start()
+		player_shot_grenade.emit()
 
 func _on_laser_timer_timeout() -> void:
 	can_laser = true
