@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c43njmaadkc3y"]
+[gd_scene load_steps=16 format=3 uid="uid://c43njmaadkc3y"]
 
 [ext_resource type="Script" uid="uid://bnllte4ixyb7" path="res://scenes/levels/level.gd" id="1_b2cq8"]
 [ext_resource type="PackedScene" uid="uid://cwf7a2x0e5ovt" path="res://scenes/player/player.tscn" id="2_b2cq8"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://4bd7vbodx672" path="res://graphics/tilesets/outside_walls.png" id="8_rmjfq"]
 [ext_resource type="Texture2D" uid="uid://dbhkhnlp48nug" path="res://graphics/tilesets/soil.png" id="9_7pb6i"]
 [ext_resource type="Texture2D" uid="uid://g1fdafa0pqpy" path="res://graphics/decals/moss/moss_5.png" id="9_xfk5q"]
+[ext_resource type="PackedScene" uid="uid://xukui2lmthuv" path="res://scenes/houses/house.tscn" id="10_xfk5q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7pb6i"]
 resource_name = "walls"
@@ -91,6 +92,10 @@ layer_0/name = "Soil"
 layer_0/tile_data = PackedInt32Array(196613, 1, 0, 262149, 1, 2, 196614, 65537, 0, 262150, 65537, 2, 196615, 131073, 0, 262151, 131073, 2, -131078, 1, 0, -65542, 1, 1, -6, 1, 2, -131077, 65537, 0, -65541, 65537, 1, -5, 65537, 2, -131076, 131073, 0, -65540, 131073, 1, -4, 131073, 2, -131069, 1, 0, 3, 65537, 2, -131068, 65537, 0, 4, 65537, 2, -131067, 131073, 1, -65531, 131073, 1, 5, 131073, 2, -196603, 131073, 0, 2, 1, 2, 327682, 1, 1, 393218, 1, 2, 327683, 131073, 1, 393219, 131073, 2, 262146, 1, 1, 196610, 1, 1, 262147, 131073, 1, 196611, 131073, 1, 131074, 1, 0, 131075, 131073, 0)
 layer_1/name = "Walls"
 layer_1/tile_data = PackedInt32Array(327679, 0, 2, 393215, 65536, 2, -3, 131072, 0, -4, 65536, 0, -5, 65536, 1, -65531, 0, 0, -65530, 65536, 0, -65529, 131072, 1, 7, 0, 2, 65543, 0, 2, 131079, 0, 2, 196615, 0, 2, 262151, 0, 2, 327687, 131072, 2, 327681, 65536, 0, 327680, 65536, 0, 262143, 131072, 1, 262142, 65536, 0, 262141, 65536, 0, 262140, 65536, 0, 262139, 65536, 2, 65531, 0, 2, 131067, 0, 2, 196603, 0, 2, 327682, 65536, 0, 327683, 65536, 0, 327684, 65536, 0, 327685, 65536, 0, 327686, 65536, 0)
+
+[node name="House" parent="Ground" instance=ExtResource("10_xfk5q")]
+position = Vector2(-1477, 4256)
+rotation = -2.31709
 
 [node name="Gate" parent="." instance=ExtResource("3_b2cq8")]
 position = Vector2(511, -543)
