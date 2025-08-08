@@ -7,6 +7,8 @@
 size = Vector2(630, 360)
 
 [node name="Bed" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 11
 
 [node name="BedImage" type="Sprite2D" parent="."]
 texture = ExtResource("1_jx3i1")
@@ -19,7 +21,6 @@ texture = ExtResource("2_g5a0r")
 [node name="PillowImage2" type="Sprite2D" parent="."]
 position = Vector2(164, 0)
 rotation = -0.174533
-scale = Vector2(1, 1)
 texture = ExtResource("2_g5a0r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
