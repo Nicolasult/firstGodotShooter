@@ -21,12 +21,19 @@ texture_region_size = Vector2i(390, 390)
 1:0/0 = 0
 2:0/0 = 0
 0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-61.2439, -68.3712, 60.6973, -66.2687, 57.5436, 195, -58.0903, 195)
 1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-59.7511, -60.7393, -57.6487, 195, 59.0364, 195, 61.4331, 58.4267, 195, 57.5436, 195, -58.0903)
 2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(60.7393, -59.7511, -195, -57.6487, -195, 59.0364, -58.4267, 61.4331, -57.5436, 195, 58.0903, 195)
 0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-58.0903, 195, 59.6461, 195, 60.6973, 66.2687, 57.5436, -195, -58.0903, -195)
 1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-60.7393, 59.7511, 195, 57.6487, 195, -59.0364, 58.4267, -61.4331, 57.5436, -195, -58.0903, -195)
 2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(59.7511, 60.7393, 57.6487, -195, -59.0364, -195, -61.4331, -58.4267, -195, -57.5436, -195, 58.0903)
 0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-61.2439, 68.3712, 60.6973, 66.2687, 57.5436, -195, -58.0903, -195)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xfk5q"]
 resource_name = "soil"
@@ -44,6 +51,8 @@ texture_region_size = Vector2i(390, 390)
 
 [sub_resource type="TileSet" id="TileSet_icy5c"]
 tile_size = Vector2i(390, 390)
+physics_layer_0/collision_layer = 4
+physics_layer_0/collision_mask = 11
 sources/0 = SubResource("TileSetAtlasSource_7pb6i")
 sources/1 = SubResource("TileSetAtlasSource_xfk5q")
 
@@ -57,7 +66,7 @@ texture_repeat = 2
 position = Vector2(724, 410)
 texture = ExtResource("2_xb4v1")
 region_enabled = true
-region_rect = Rect2(-2865.15, -1088.13, 7851.33, 5855.5)
+region_rect = Rect2(-6788.07, -2005.81, 15076.9, 12482.2)
 
 [node name="Decoration" type="Sprite2D" parent="Ground"]
 modulate = Color(0.984314, 0.835294, 0.615686, 0.858824)
