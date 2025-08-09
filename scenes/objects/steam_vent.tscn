@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://gsbgojkjtnc2"]
+
+[ext_resource type="Texture2D" uid="uid://51bkggm7yrbf" path="res://graphics/objects/ventilation_hole.png" id="1_tsb1a"]
+[ext_resource type="Texture2D" uid="uid://br42k3dskhpsq" path="res://graphics/decals/white.png" id="2_2mcvv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2mcvv"]
+radius = 88.0511
+
+[sub_resource type="CurveTexture" id="CurveTexture_2mcvv"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_tsb1a"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 47.26
+gravity = Vector3(100, -150, 0)
+linear_accel_min = -43.1
+linear_accel_max = -43.1
+linear_accel_curve = SubResource("CurveTexture_2mcvv")
+scale_max = 4.0
+color = Color(0.821789, 0.821789, 0.821788, 1)
+
+[node name="SteamVent" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_2mcvv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_tsb1a")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+amount = 90
+texture = ExtResource("2_2mcvv")
+process_material = SubResource("ParticleProcessMaterial_tsb1a")
