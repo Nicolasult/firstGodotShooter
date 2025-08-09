@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=4 uid="uid://xukui2lmthuv"]
+[gd_scene load_steps=10 format=4 uid="uid://xukui2lmthuv"]
 
 [ext_resource type="Texture2D" uid="uid://3nknvcggjugo" path="res://graphics/tilesets/interior.png" id="1_b1fwh"]
+[ext_resource type="PackedScene" uid="uid://fhnkkd7q8mna" path="res://scenes/objects/simple_light.tscn" id="2_b1fwh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i7cyq"]
 size = Vector2(3640.5, 2471.5)
@@ -16877,3 +16878,6 @@ tile_set = SubResource("TileSet_i7cyq")
 [node name="InteriorExtWalls" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAD//wUAAAADAAIAAAAAAAUAAAAEAAIAAAABAAUAAAAEAAIAAAACAAUAAAAEAAIAAAADAAUAAAAEAAIAAAAEAAUAAAAEAAIAAAAIAAUAAAAFAAIAAAAHAAUAAAAEAAIAAAAIAAQAAAAFAAEAAAAIAAMAAAAFAAEAAAAIAAIAAAAFAAEAAAAIAAEAAAAFAAEAAAAIAAAAAAAFAAEAAAAIAP//AAAFAAAAAAAHAP//AAAEAAAAAAAGAP//AAAEAAAAAAAFAP//AAAEAAAAAAAEAP//AAAEAAAAAAADAP//AAAEAAAAAAACAP//AAAEAAAAAAABAP//AAAEAAAAAAAAAP//AAAEAAAAAAD/////AAADAAAAAAD//wAAAAADAAEAAAD//wEAAAADAAEAAAD//wIAAAADAAEAAAD//wMAAAADAAEAAAD//wQAAAADAAEAAAA=")
 tile_set = SubResource("TileSet_b1fwh")
+
+[node name="SimpleLight" parent="." instance=ExtResource("2_b1fwh")]
+position = Vector2(2225, -139)
