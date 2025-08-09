@@ -16978,5 +16978,9 @@ tile_set = SubResource("TileSet_b1fwh")
 position = Vector2(993, -123)
 
 [node name="WallLight" parent="." instance=ExtResource("3_nwqdy")]
-position = Vector2(3154, 1372)
+position = Vector2(3226, 1372)
 rotation = 1.5708
+
+[node name="SimpleLight2" parent="." instance=ExtResource("2_b1fwh")]
+position = Vector2(642, 2073)
+rotation = 3.14159

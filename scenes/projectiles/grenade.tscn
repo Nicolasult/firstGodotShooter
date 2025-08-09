@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dr6wqnf8jaivc"]
+[gd_scene load_steps=8 format=3 uid="uid://dr6wqnf8jaivc"]
 
 [ext_resource type="Texture2D" uid="uid://bltmtp1otj6ou" path="res://graphics/projectiles/grenade.png" id="1_1mnvm"]
 [ext_resource type="Script" uid="uid://da00a0o38v5bg" path="res://scenes/projectiles/grenade.gd" id="1_b7x1w"]
+[ext_resource type="Texture2D" uid="uid://cfq8hp63pf1v0" path="res://graphics/explosions/explosion_3.png" id="3_3382y"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_b7x1w"]
 friction = 10.0
@@ -9,6 +10,14 @@ bounce = 0.4
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b7x1w"]
 radius = 31.1448
+
+[sub_resource type="Animation" id="Animation_3382y"]
+resource_name = "Explosion"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oqjs3"]
+_data = {
+&"Explosion": SubResource("Animation_3382y")
+}
 
 [node name="Grenade" type="RigidBody2D"]
 collision_layer = 8
@@ -24,3 +33,13 @@ texture = ExtResource("1_1mnvm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_b7x1w")
+
+[node name="Explosion" type="Sprite2D" parent="."]
+texture = ExtResource("3_3382y")
+hframes = 8
+vframes = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_oqjs3")
+}
