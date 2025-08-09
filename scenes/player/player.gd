@@ -1,10 +1,13 @@
 extends CharacterBody2D
 
+signal player_shot_laser(pos, direction)
+signal player_shot_grenade(pos, direction)
+
 var can_laser: bool = true
 var can_grenade: bool = true
 
-signal player_shot_laser(pos, direction)
-signal player_shot_grenade(pos, direction)
+@export var max_speed: int = 500 
+var speed: int = max_speed
 
 func _ready():
 	pass
@@ -13,7 +16,7 @@ func _process(_delta):
 	
 	# input
 	var direction = Input.get_vector("left", "right", "up", "down")
-	velocity = direction * 500
+	velocity = direction * speed
 	move_and_slide()
 	
 	# rotate
