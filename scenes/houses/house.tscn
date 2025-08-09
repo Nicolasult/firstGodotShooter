@@ -16880,4 +16880,4 @@ tile_map_data = PackedByteArray("AAD//wUAAAADAAIAAAAAAAUAAAAEAAIAAAABAAUAAAAEAAI
 tile_set = SubResource("TileSet_b1fwh")
 
 [node name="SimpleLight" parent="." instance=ExtResource("2_b1fwh")]
-position = Vector2(2225, -139)
+position = Vector2(1681, -139)
