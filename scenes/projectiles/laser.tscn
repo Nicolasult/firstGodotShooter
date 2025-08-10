@@ -10,7 +10,6 @@ height = 122.0
 collision_layer = 8
 collision_mask = 15
 script = ExtResource("1_e6ads")
-speed = 1800
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 23)
@@ -19,4 +18,9 @@ texture = ExtResource("1_rlgyd")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_e6ads")
 
+[node name="SelfDestructTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="SelfDestructTimer" to="." method="_on_timer_timeout"]
