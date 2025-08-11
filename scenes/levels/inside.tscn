@@ -1,11 +1,13 @@
-[gd_scene load_steps=9 format=4 uid="uid://bfa46pd4uhlih"]
+[gd_scene load_steps=11 format=4 uid="uid://bfa46pd4uhlih"]
 
 [ext_resource type="PackedScene" uid="uid://c43njmaadkc3y" path="res://scenes/levels/level.tscn" id="1_8ht0b"]
 [ext_resource type="TileSet" uid="uid://rfrsyygtwulu" path="res://scenes/levels/house_floor.tres" id="2_71x7e"]
 [ext_resource type="Texture2D" uid="uid://jmyw41w12gha" path="res://graphics/ground/dirt.png" id="2_086xj"]
 [ext_resource type="TileSet" uid="uid://cblkqapowh8b" path="res://scenes/levels/house_innwalls.tres" id="3_086xj"]
 [ext_resource type="TileSet" uid="uid://b115bvxmwq43j" path="res://scenes/levels/house_extwalls.tres" id="4_xanyd"]
+[ext_resource type="PackedScene" uid="uid://ljfmi3hdy5eo" path="res://scenes/objects/wall_light.tscn" id="6_x0st6"]
 [ext_resource type="PackedScene" uid="uid://c7s8g63sintvn" path="res://scenes/objects/light_fan_animation.tscn" id="6_xanyd"]
+[ext_resource type="PackedScene" uid="uid://fhnkkd7q8mna" path="res://scenes/objects/simple_light.tscn" id="7_0kuad"]
 [ext_resource type="Texture2D" uid="uid://qxu2nuetrwd3" path="res://graphics/lights/overlays/infrastructure.png" id="7_j5d1l"]
 [ext_resource type="Texture2D" uid="uid://si1n0ta888dw" path="res://graphics/lights/overlays/hole.png" id="8_6serm"]
 
@@ -37,6 +39,43 @@ tile_map_data = PackedByteArray("AAD2//n/AAAEAAAAAAD3//n/AAAEAAAAAAD4//n/AAAEAAA
 tile_set = ExtResource("4_xanyd")
 metadata/_edit_lock_ = true
 
+[node name="WallLight" parent="Ground" index="4" instance=ExtResource("6_x0st6")]
+position = Vector2(2057, 2187)
+rotation = 1.5708
+metadata/_edit_lock_ = true
+
+[node name="WallLight2" parent="Ground" index="5" instance=ExtResource("6_x0st6")]
+position = Vector2(-4008, -1914)
+rotation = -1.5708
+metadata/_edit_lock_ = true
+
+[node name="WallLight3" parent="Ground" index="6" instance=ExtResource("6_x0st6")]
+position = Vector2(-731, -2447)
+metadata/_edit_lock_ = true
+
+[node name="WallLight4" parent="Ground" index="7" instance=ExtResource("6_x0st6")]
+position = Vector2(5121, -1663)
+metadata/_edit_lock_ = true
+
+[node name="SimpleLight" parent="Ground" index="8" instance=ExtResource("7_0kuad")]
+position = Vector2(1344, 337)
+rotation = 1.5708
+
+[node name="SimpleLight2" parent="Ground" index="9" instance=ExtResource("7_0kuad")]
+position = Vector2(1344, -1280)
+rotation = 1.5708
+
+[node name="SimpleLight3" parent="Ground" index="10" instance=ExtResource("7_0kuad")]
+position = Vector2(-1518, -1739)
+
+[node name="SimpleLight4" parent="Ground" index="11" instance=ExtResource("7_0kuad")]
+position = Vector2(2944, -1386)
+rotation = 3.14159
+
+[node name="SimpleLight5" parent="Ground" index="12" instance=ExtResource("7_0kuad")]
+position = Vector2(3585, 120)
+rotation = 3.14159
+
 [node name="Player" parent="." index="2"]
 position = Vector2(942, 2245)
 metadata/_edit_group_ = true
@@ -65,7 +104,19 @@ scale = Vector2(1.056, 1.056)
 autoplay = "default"
 metadata/_edit_lock_ = true
 
-[node name="Infrastructure" type="Sprite2D" parent="Lights" index="3"]
+[node name="LightFanAnimation4" parent="Lights" index="3" instance=ExtResource("6_xanyd")]
+position = Vector2(1855, -114)
+scale = Vector2(1.056, 1.056)
+autoplay = "default"
+metadata/_edit_lock_ = true
+
+[node name="LightFanAnimation5" parent="Lights" index="4" instance=ExtResource("6_xanyd")]
+position = Vector2(5887, -482)
+scale = Vector2(1.322, 1.322)
+autoplay = "default"
+metadata/_edit_lock_ = true
+
+[node name="Infrastructure" type="Sprite2D" parent="Lights" index="5"]
 modulate = Color(1, 1, 1, 0.176471)
 position = Vector2(965.81, 2498)
 rotation = 1.5708
@@ -73,49 +124,49 @@ scale = Vector2(1.50545, 3.96496)
 texture = ExtResource("7_j5d1l")
 metadata/_edit_lock_ = true
 
-[node name="Infrastructure2" type="Sprite2D" parent="Lights" index="4"]
+[node name="Infrastructure2" type="Sprite2D" parent="Lights" index="6"]
 modulate = Color(1, 1, 1, 0.196078)
 position = Vector2(-3367.5, -1754.5)
 scale = Vector2(1.164, 2.56239)
 texture = ExtResource("7_j5d1l")
 metadata/_edit_lock_ = true
 
-[node name="Infrastructure3" type="Sprite2D" parent="Lights" index="5"]
+[node name="Infrastructure3" type="Sprite2D" parent="Lights" index="7"]
 modulate = Color(1, 1, 1, 0.137255)
 position = Vector2(-462, -1170.5)
 scale = Vector2(1, 2.05606)
 texture = ExtResource("7_j5d1l")
 metadata/_edit_lock_ = true
 
-[node name="Infrastructure4" type="Sprite2D" parent="Lights" index="6"]
+[node name="Infrastructure4" type="Sprite2D" parent="Lights" index="8"]
 modulate = Color(1, 1, 1, 0.156863)
 position = Vector2(2600.5, -222.5)
 scale = Vector2(1.068, 1.2387)
 texture = ExtResource("7_j5d1l")
 metadata/_edit_lock_ = true
 
-[node name="Hole" type="Sprite2D" parent="Lights" index="7"]
+[node name="Hole" type="Sprite2D" parent="Lights" index="9"]
 modulate = Color(0.960784, 0.933333, 0.92549, 0.152941)
 position = Vector2(459.138, 858.875)
 scale = Vector2(3.72982, 3.72982)
 texture = ExtResource("8_6serm")
 metadata/_edit_lock_ = true
 
-[node name="Hole2" type="Sprite2D" parent="Lights" index="8"]
+[node name="Hole2" type="Sprite2D" parent="Lights" index="10"]
 modulate = Color(1, 1, 1, 0.0745098)
 position = Vector2(-1904, -676)
 scale = Vector2(2.02915, 2.02915)
 texture = ExtResource("8_6serm")
 metadata/_edit_lock_ = true
 
-[node name="Hole5" type="Sprite2D" parent="Lights" index="9"]
+[node name="Hole5" type="Sprite2D" parent="Lights" index="11"]
 modulate = Color(1, 1, 1, 0.0745098)
 position = Vector2(4263, -292)
 scale = Vector2(2.02915, 2.02915)
 texture = ExtResource("8_6serm")
 metadata/_edit_lock_ = true
 
-[node name="Hole6" type="Sprite2D" parent="Lights" index="10"]
+[node name="Hole6" type="Sprite2D" parent="Lights" index="12"]
 modulate = Color(1, 1, 1, 0.137255)
 position = Vector2(4721, -1192)
 rotation = 1.5708
@@ -123,7 +174,7 @@ scale = Vector2(2.02915, 2.02915)
 texture = ExtResource("8_6serm")
 metadata/_edit_lock_ = true
 
-[node name="Hole3" type="Sprite2D" parent="Lights" index="11"]
+[node name="Hole3" type="Sprite2D" parent="Lights" index="13"]
 modulate = Color(1, 1, 1, 0.0745098)
 position = Vector2(-2494.19, -1350.12)
 rotation = 1.5708
@@ -131,10 +182,24 @@ scale = Vector2(2.5213, 2.5213)
 texture = ExtResource("8_6serm")
 metadata/_edit_lock_ = true
 
-[node name="Hole4" type="Sprite2D" parent="Lights" index="12"]
+[node name="Hole4" type="Sprite2D" parent="Lights" index="14"]
 modulate = Color(1, 1, 1, 0.0745098)
 position = Vector2(2191, -2094)
 rotation = -3.14159
 scale = Vector2(3.85064, 3.85064)
 texture = ExtResource("8_6serm")
+metadata/_edit_lock_ = true
+
+[node name="Infrastructure5" type="Sprite2D" parent="Lights" index="15"]
+modulate = Color(0.270588, 0.270588, 0.270588, 1)
+position = Vector2(-989.5, -417.5)
+scale = Vector2(1.588, 4.77939)
+texture = ExtResource("7_j5d1l")
+metadata/_edit_lock_ = true
+
+[node name="Infrastructure6" type="Sprite2D" parent="Lights" index="16"]
+modulate = Color(0.270588, 0.270588, 0.270588, 1)
+position = Vector2(3330, -1728)
+scale = Vector2(1.656, 1.24412)
+texture = ExtResource("7_j5d1l")
 metadata/_edit_lock_ = true
