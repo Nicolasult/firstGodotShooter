@@ -9,6 +9,9 @@ var can_grenade: bool = true
 @export var max_speed: int = 500 
 var speed: int = max_speed
 
+func hit():
+	print("player was hit")
+
 func _process(_delta):
 	
 	# input
