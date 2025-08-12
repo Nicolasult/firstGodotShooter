@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://c7rayxftbngio"]
+[gd_scene load_steps=21 format=4 uid="uid://c7rayxftbngio"]
 
 [ext_resource type="PackedScene" uid="uid://c43njmaadkc3y" path="res://scenes/levels/level.tscn" id="1_2s4ok"]
 [ext_resource type="Texture2D" uid="uid://bpxhnav02wj4n" path="res://graphics/ground/stones.png" id="2_qvsb0"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://c7s8g63sintvn" path="res://scenes/objects/light_fan_animation.tscn" id="12_oe17f"]
 [ext_resource type="PackedScene" uid="uid://bdphous6hi4it" path="res://scenes/items/item.tscn" id="15_ex6t8"]
 [ext_resource type="PackedScene" uid="uid://beyvjbsc4p76" path="res://scenes/objects/crate.tscn" id="16_uaeil"]
+[ext_resource type="PackedScene" uid="uid://kuf8m4dc4sp1" path="res://scenes/objects/toilet.tscn" id="17_bjulg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lbwx5"]
 resource_name = "walls"
@@ -66,6 +67,9 @@ sources/1 = SubResource("TileSetAtlasSource_ddemh")
 
 [node name="Outside" instance=ExtResource("1_2s4ok")]
 script = ExtResource("2_xqqjy")
+
+[node name="Ground" parent="." index="0"]
+metadata/_edit_group_ = true
 
 [node name="Soil" type="Sprite2D" parent="Ground" index="0"]
 texture_repeat = 2
@@ -135,10 +139,16 @@ position = Vector2(522, -744)
 [node name="Crate" parent="." index="2" instance=ExtResource("16_uaeil")]
 position = Vector2(1055, 616)
 
-[node name="Player" parent="." index="5"]
+[node name="Toilet" parent="." index="3" instance=ExtResource("17_bjulg")]
+position = Vector2(-239, 227)
+
+[node name="Items" parent="." index="4"]
+metadata/_edit_lock_ = true
+
+[node name="Player" parent="." index="6"]
 position = Vector2(561, 302)
 
-[node name="Item" parent="." index="6" instance=ExtResource("15_ex6t8")]
+[node name="Item" parent="." index="7" instance=ExtResource("15_ex6t8")]
 position = Vector2(942, 262)
 
 [connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]

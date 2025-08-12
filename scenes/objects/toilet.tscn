@@ -21,3 +21,5 @@ texture = ExtResource("2_gxs1e")
 [node name="LidSprite" parent="." index="2" groups=["Container"]]
 position = Vector2(0, 17)
 texture = ExtResource("4_2asns")
+
+[node name="Marker2D" type="Marker2D" parent="SpawnPositions" index="0"]
