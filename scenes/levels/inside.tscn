@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://bfa46pd4uhlih"]
+[gd_scene load_steps=29 format=4 uid="uid://bfa46pd4uhlih"]
 
 [ext_resource type="PackedScene" uid="uid://c43njmaadkc3y" path="res://scenes/levels/level.tscn" id="1_8ht0b"]
 [ext_resource type="Script" uid="uid://do8wkw7n3dnao" path="res://scenes/levels/inside.gd" id="2_7r4nv"]
@@ -20,6 +20,13 @@
 [ext_resource type="Texture2D" uid="uid://d2xcyj7pg2rx6" path="res://graphics/lights/textures/circle.png" id="11_tkhku"]
 [ext_resource type="PackedScene" uid="uid://gsbgojkjtnc2" path="res://scenes/objects/steam_vent.tscn" id="12_efnym"]
 [ext_resource type="PackedScene" uid="uid://beyvjbsc4p76" path="res://scenes/objects/crate.tscn" id="14_jfm54"]
+[ext_resource type="Texture2D" uid="uid://durw8vygvrqei" path="res://graphics/objects/infestation/line.png" id="20_ynqn5"]
+[ext_resource type="Texture2D" uid="uid://cmobmenca1rkn" path="res://graphics/objects/infestation/medium.png" id="21_7me46"]
+[ext_resource type="Texture2D" uid="uid://d0sw4xni1xrj8" path="res://graphics/objects/infestation/small.png" id="22_6x5su"]
+[ext_resource type="Texture2D" uid="uid://bbaw1hr7qh1cu" path="res://graphics/objects/infestation/small_2.png" id="23_x8a3u"]
+[ext_resource type="Texture2D" uid="uid://c68g5a0x51xnw" path="res://graphics/objects/infestation/small_3.png" id="24_on0fk"]
+[ext_resource type="Texture2D" uid="uid://bqwnw6jqoxyrf" path="res://graphics/objects/infestation/small_4.png" id="25_8nb5w"]
+[ext_resource type="Texture2D" uid="uid://ch5uu6mg8466m" path="res://graphics/objects/infestation/spikes.png" id="26_afe1h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tkhku"]
 size = Vector2(757, 418)
@@ -315,8 +322,8 @@ scale = Vector2(3.85064, 3.85064)
 texture = ExtResource("8_6serm")
 
 [node name="Infrastructure5" type="Sprite2D" parent="Lights" index="15"]
-modulate = Color(0.270588, 0.270588, 0.270588, 1)
-position = Vector2(-989.5, -417.5)
+modulate = Color(0.270588, 0.270588, 0.270588, 0.368627)
+position = Vector2(-990, -417)
 scale = Vector2(1.588, 4.77939)
 texture = ExtResource("7_j5d1l")
 
@@ -326,18 +333,116 @@ position = Vector2(3330, -1728)
 scale = Vector2(1.656, 1.24412)
 texture = ExtResource("7_j5d1l")
 
+[node name="Infestation" parent="." index="3"]
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Line" type="Sprite2D" parent="Infestation" index="0"]
+position = Vector2(2125, -1037)
+texture = ExtResource("20_ynqn5")
+
+[node name="Line2" type="Sprite2D" parent="Infestation" index="1"]
+position = Vector2(1332, -944)
+texture = ExtResource("20_ynqn5")
+
+[node name="Line3" type="Sprite2D" parent="Infestation" index="2"]
+position = Vector2(606, -1724)
+rotation = 1.5708
+texture = ExtResource("20_ynqn5")
+
+[node name="Line5" type="Sprite2D" parent="Infestation" index="3"]
+position = Vector2(-2613, -2458)
+rotation = 1.5708
+texture = ExtResource("20_ynqn5")
+
+[node name="Line6" type="Sprite2D" parent="Infestation" index="4"]
+position = Vector2(1305, -3249)
+rotation = 1.5708
+texture = ExtResource("20_ynqn5")
+
+[node name="Line7" type="Sprite2D" parent="Infestation" index="5"]
+position = Vector2(3050, -555)
+rotation = 1.5708
+texture = ExtResource("20_ynqn5")
+
+[node name="Line4" type="Sprite2D" parent="Infestation" index="6"]
+position = Vector2(-328, -1784)
+rotation = 1.5708
+texture = ExtResource("20_ynqn5")
+
+[node name="Medium" type="Sprite2D" parent="Infestation" index="7"]
+position = Vector2(1403, -364)
+texture = ExtResource("21_7me46")
+
+[node name="Medium2" type="Sprite2D" parent="Infestation" index="8"]
+position = Vector2(1403, -208)
+rotation = 0.401426
+texture = ExtResource("21_7me46")
+
+[node name="Medium3" type="Sprite2D" parent="Infestation" index="9"]
+position = Vector2(1403, 157)
+rotation = 2.25147
+texture = ExtResource("21_7me46")
+
+[node name="Medium4" type="Sprite2D" parent="Infestation" index="10"]
+position = Vector2(1670, 547)
+rotation = 1.22173
+texture = ExtResource("21_7me46")
+
+[node name="Small" type="Sprite2D" parent="Infestation" index="11"]
+position = Vector2(-109, 2217)
+texture = ExtResource("22_6x5su")
+
+[node name="Small5" type="Sprite2D" parent="Infestation" index="12"]
+position = Vector2(-126, 2519)
+rotation = 3.14159
+texture = ExtResource("22_6x5su")
+
+[node name="Small6" type="Sprite2D" parent="Infestation" index="13"]
+position = Vector2(-126, 2139)
+rotation = 3.14159
+texture = ExtResource("22_6x5su")
+
+[node name="Small2" type="Sprite2D" parent="Infestation" index="14"]
+position = Vector2(2125, -750)
+texture = ExtResource("23_x8a3u")
+
+[node name="Small3" type="Sprite2D" parent="Infestation" index="15"]
+position = Vector2(2125, -750)
+texture = ExtResource("24_on0fk")
+
+[node name="Small4" type="Sprite2D" parent="Infestation" index="16"]
+position = Vector2(2125, -750)
+texture = ExtResource("25_8nb5w")
+
+[node name="Spikes" type="Sprite2D" parent="Infestation" index="17"]
+position = Vector2(-2972, -2431)
+texture = ExtResource("26_afe1h")
+
+[node name="Spikes2" type="Sprite2D" parent="Infestation" index="18"]
+position = Vector2(-2876, -2431)
+rotation = 1.69297
+texture = ExtResource("26_afe1h")
+
+[node name="Spikes3" type="Sprite2D" parent="Infestation" index="19"]
+position = Vector2(-2876, -2326)
+rotation = 0.366519
+texture = ExtResource("26_afe1h")
+
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="." index="4"]
 color = Color(0.512272, 0.466535, 0.38503, 1)
 blend_mode = 1
 metadata/_edit_lock_ = true
 
 [node name="SouthDoor" type="Area2D" parent="." index="5"]
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SouthDoor" index="0"]
 position = Vector2(776.5, 3057)
 shape = SubResource("RectangleShape2D_tkhku")
 
-[node name="Player" parent="." index="7"]
+[node name="Player" parent="." index="8"]
 position = Vector2(769, 2615)
 metadata/_edit_group_ = true
 
