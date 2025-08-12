@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://bfa46pd4uhlih"]
+[gd_scene load_steps=16 format=4 uid="uid://bfa46pd4uhlih"]
 
 [ext_resource type="PackedScene" uid="uid://c43njmaadkc3y" path="res://scenes/levels/level.tscn" id="1_8ht0b"]
 [ext_resource type="Script" uid="uid://do8wkw7n3dnao" path="res://scenes/levels/inside.gd" id="2_7r4nv"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://si1n0ta888dw" path="res://graphics/lights/overlays/hole.png" id="8_6serm"]
 [ext_resource type="Texture2D" uid="uid://d2xcyj7pg2rx6" path="res://graphics/lights/textures/circle.png" id="11_tkhku"]
 [ext_resource type="PackedScene" uid="uid://bdphous6hi4it" path="res://scenes/items/item.tscn" id="13_4iit3"]
+[ext_resource type="PackedScene" uid="uid://beyvjbsc4p76" path="res://scenes/objects/crate.tscn" id="14_jfm54"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tkhku"]
 size = Vector2(757, 418)
@@ -88,7 +89,10 @@ position = Vector2(3585, 120)
 rotation = -3.14159
 metadata/_edit_lock_ = true
 
-[node name="Lights" type="Node2D" parent="." index="2"]
+[node name="Crate" parent="." index="1" instance=ExtResource("14_jfm54")]
+position = Vector2(1348, 1676)
+
+[node name="Lights" type="Node2D" parent="." index="3"]
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
@@ -192,7 +196,18 @@ position = Vector2(3330, -1728)
 scale = Vector2(1.656, 1.24412)
 texture = ExtResource("7_j5d1l")
 
-[node name="Player" parent="." index="3"]
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." index="5"]
+color = Color(0.512272, 0.466535, 0.38503, 1)
+blend_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="SouthDoor" type="Area2D" parent="." index="6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SouthDoor" index="0"]
+position = Vector2(776.5, 3057)
+shape = SubResource("RectangleShape2D_tkhku")
+
+[node name="Player" parent="." index="7"]
 position = Vector2(769, 2615)
 metadata/_edit_group_ = true
 
@@ -201,18 +216,7 @@ energy = 1.2
 texture = ExtResource("11_tkhku")
 texture_scale = 3.0
 
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." index="4"]
-color = Color(0.512272, 0.466535, 0.38503, 1)
-blend_mode = 1
-metadata/_edit_lock_ = true
-
-[node name="SouthDoor" type="Area2D" parent="." index="5"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SouthDoor" index="0"]
-position = Vector2(776.5, 3057)
-shape = SubResource("RectangleShape2D_tkhku")
-
-[node name="Item" parent="." index="7" instance=ExtResource("13_4iit3")]
+[node name="Item" parent="." index="8" instance=ExtResource("13_4iit3")]
 position = Vector2(1416, 2083)
 
 [connection signal="body_entered" from="SouthDoor" to="." method="_on_south_door_body_entered"]
