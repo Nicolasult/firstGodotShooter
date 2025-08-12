@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://bfa46pd4uhlih"]
+[gd_scene load_steps=17 format=4 uid="uid://bfa46pd4uhlih"]
 
 [ext_resource type="PackedScene" uid="uid://c43njmaadkc3y" path="res://scenes/levels/level.tscn" id="1_8ht0b"]
 [ext_resource type="Script" uid="uid://do8wkw7n3dnao" path="res://scenes/levels/inside.gd" id="2_7r4nv"]
@@ -11,8 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://fhnkkd7q8mna" path="res://scenes/objects/simple_light.tscn" id="7_0kuad"]
 [ext_resource type="Texture2D" uid="uid://qxu2nuetrwd3" path="res://graphics/lights/overlays/infrastructure.png" id="7_j5d1l"]
 [ext_resource type="Texture2D" uid="uid://si1n0ta888dw" path="res://graphics/lights/overlays/hole.png" id="8_6serm"]
+[ext_resource type="PackedScene" uid="uid://bxqtwr7ri4ulc" path="res://scenes/objects/bed.tscn" id="9_o1nno"]
+[ext_resource type="PackedScene" uid="uid://kuf8m4dc4sp1" path="res://scenes/objects/toilet.tscn" id="10_efnym"]
 [ext_resource type="Texture2D" uid="uid://d2xcyj7pg2rx6" path="res://graphics/lights/textures/circle.png" id="11_tkhku"]
-[ext_resource type="PackedScene" uid="uid://bdphous6hi4it" path="res://scenes/items/item.tscn" id="13_4iit3"]
 [ext_resource type="PackedScene" uid="uid://beyvjbsc4p76" path="res://scenes/objects/crate.tscn" id="14_jfm54"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tkhku"]
@@ -22,6 +23,7 @@ size = Vector2(757, 418)
 script = ExtResource("2_7r4nv")
 
 [node name="Ground" parent="." index="0"]
+metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Ground" index="0"]
@@ -29,70 +31,111 @@ texture_repeat = 2
 texture = ExtResource("2_086xj")
 region_enabled = true
 region_rect = Rect2(-9604.45, -7011.65, 18477.3, 15523.2)
-metadata/_edit_lock_ = true
 
 [node name="Floor" type="TileMapLayer" parent="Ground" index="1"]
 position = Vector2(-4, 8)
 tile_map_data = PackedByteArray("AAD///z/AAABAAEAAAD///3/AAABAAEAAAD///7/AAABAAEAAAD/////AAABAAEAAAD//wAAAAABAAEAAAD//wEAAAABAAEAAAAAAPz/AAABAAEAAAAAAP3/AAABAAEAAAAAAP7/AAABAAEAAAAAAP//AAABAAEAAAAAAAAAAAABAAEAAAABAPz/AAABAAEAAAABAP3/AAABAAEAAAABAP7/AAABAAEAAAABAP//AAABAAEAAAABAAAAAAABAAEAAAACAPz/AAABAAEAAAACAP3/AAABAAEAAAACAP7/AAABAAEAAAACAP//AAABAAEAAAACAAAAAAABAAEAAAADAPz/AAABAAEAAAADAP3/AAABAAEAAAADAP7/AAABAAEAAAADAP//AAABAAEAAAADAAAAAAABAAEAAAAEAPz/AAABAAEAAAAEAP3/AAABAAEAAAAEAP7/AAABAAEAAAAEAP//AAABAAEAAAAEAAAAAAABAAEAAAD9/wAAAAABAAEAAAD9/wEAAAABAAEAAAD+/wAAAAABAAEAAAD+/wEAAAABAAEAAAD5//r/AAABAAEAAAD5//v/AAABAAEAAAD5//z/AAABAAEAAAD5//3/AAABAAEAAAD5//7/AAABAAEAAAD6//r/AAABAAEAAAD6//v/AAABAAEAAAD6//z/AAABAAEAAAD6//3/AAABAAEAAAD6//7/AAABAAEAAAD7//r/AAABAAEAAAD7//v/AAABAAEAAAD7//z/AAABAAEAAAD7//3/AAABAAEAAAD7//7/AAABAAEAAAD8//r/AAABAAEAAAD8//v/AAABAAEAAAD8//z/AAABAAEAAAD8//3/AAABAAEAAAD8//7/AAABAAEAAAD9//r/AAABAAEAAAD9//v/AAABAAEAAAD9//z/AAABAAEAAAD9//3/AAABAAEAAAD9//7/AAABAAEAAAD+//r/AAABAAEAAAD+//v/AAABAAEAAAD+//z/AAABAAEAAAD+//3/AAABAAEAAAD+//7/AAABAAEAAAD///r/AAABAAEAAAD///v/AAABAAEAAAAAAPr/AAABAAEAAAAAAPv/AAABAAEAAAABAPr/AAABAAEAAAABAPv/AAABAAEAAAACAPr/AAABAAEAAAACAPv/AAABAAEAAAADAPj/AAABAAEAAAADAPn/AAABAAEAAAADAPr/AAABAAEAAAADAPv/AAABAAEAAAAEAPj/AAABAAEAAAAEAPn/AAABAAEAAAAEAPr/AAABAAEAAAAEAPv/AAABAAEAAAAFAPj/AAABAAEAAAAFAPn/AAABAAEAAAAFAPr/AAABAAEAAAAFAPv/AAABAAEAAAAFAPz/AAABAAEAAAAFAP3/AAABAAEAAAAFAP7/AAABAAEAAAAGAPn/AAABAAEAAAAGAPz/AAABAAEAAAAGAP3/AAABAAEAAAAGAP7/AAABAAEAAAD9////AAABAAEAAAD+////AAABAAEAAAD7////AAABAAEAAAD7/wAAAAABAAEAAAD8////AAABAAEAAAD8/wAAAAABAAEAAAD2//r/AAABAAEAAAD2//v/AAABAAEAAAD2//z/AAABAAEAAAD3//r/AAABAAEAAAD3//v/AAABAAEAAAD3//z/AAABAAEAAAD4//r/AAABAAEAAAD4//v/AAABAAEAAAD4//z/AAABAAEAAAAFAP//AAABAAEAAAAGAP//AAABAAEAAAAHAPz/AAABAAEAAAAHAP3/AAABAAEAAAAHAP7/AAABAAEAAAAHAP//AAABAAEAAAAIAPz/AAABAAEAAAAIAP3/AAABAAEAAAAIAP7/AAABAAEAAAAIAP//AAABAAEAAAAJAPz/AAABAAEAAAAJAP3/AAABAAEAAAAJAP7/AAABAAEAAAAJAP//AAABAAEAAAAKAPz/AAABAAEAAAAKAP3/AAABAAEAAAAKAP7/AAABAAEAAAAKAP//AAABAAEAAAALAPz/AAABAAEAAAALAP3/AAABAAEAAAALAP7/AAABAAEAAAALAP//AAABAAEAAAAMAPz/AAABAAEAAAAMAP3/AAABAAEAAAAMAP7/AAABAAEAAAAMAP//AAABAAEAAAANAPz/AAABAAEAAAANAP3/AAABAAEAAAANAP7/AAABAAEAAAANAP//AAABAAEAAAAOAPz/AAABAAEAAAAOAP3/AAABAAEAAAAOAP7/AAABAAEAAAAOAP//AAABAAEAAAAPAPz/AAABAAEAAAAPAP3/AAABAAEAAAAPAP7/AAABAAEAAAAPAP//AAABAAEAAAAQAPz/AAABAAEAAAAQAP3/AAABAAEAAAAQAP7/AAABAAEAAAAQAP//AAABAAEAAAAGAPr/AAABAAEAAAAGAPv/AAABAAEAAAAHAPv/AAABAAEAAAAIAPv/AAABAAEAAAAJAPv/AAABAAEAAAAKAPv/AAABAAEAAAAAAAEAAAABAAEAAAAAAAIAAAABAAEAAAAAAAMAAAABAAEAAAAAAAQAAAABAAEAAAAAAAUAAAABAAEAAAAAAAYAAAABAAEAAAABAAEAAAABAAEAAAABAAIAAAABAAEAAAABAAMAAAABAAEAAAABAAQAAAABAAEAAAABAAUAAAABAAEAAAABAAYAAAABAAEAAAACAAEAAAABAAEAAAACAAIAAAABAAEAAAACAAMAAAABAAEAAAACAAQAAAABAAEAAAACAAUAAAABAAEAAAACAAYAAAABAAEAAAADAAEAAAABAAEAAAADAAIAAAABAAEAAAADAAMAAAABAAEAAAADAAQAAAABAAEAAAADAAUAAAABAAEAAAADAAYAAAABAAEAAAAEAAEAAAABAAEAAAAEAAIAAAABAAEAAAAEAAMAAAABAAEAAAAEAAQAAAABAAEAAAAEAAUAAAABAAEAAAAEAAYAAAABAAEAAAARAP3/AAABAAMAAAARAP7/AAABAAMAAAABAAcAAAACAAQAAAACAAcAAAACAAQAAAD2//n/AAABAAAAAAD3//n/AAABAAAAAAD4//n/AAABAAAAAAD5//n/AAABAAAAAAD6//n/AAABAAAAAAD7//n/AAABAAAAAAD8//n/AAABAAAAAAD9//n/AAABAAAAAAD+//n/AAABAAAAAAD///n/AAABAAAAAAAAAPn/AAABAAAAAAABAPn/AAABAAAAAAADAPf/AAABAAAAAAAEAPf/AAABAAAAAAAFAPf/AAABAAAAAAAHAPr/AAAAAAUAAAAIAPr/AAABAAAAAAAJAPr/AAABAAAAAAAKAPr/AAABAAAAAAAMAPv/AAABAAAAAAANAPv/AAABAAAAAAAOAPv/AAABAAAAAAAPAPv/AAABAAAAAAAQAPv/AAABAAAAAAAGAAAAAAABAAIAAAAHAAAAAAABAAIAAAAIAAAAAAABAAIAAAAJAAAAAAABAAIAAAAKAAAAAAABAAIAAAALAAAAAAABAAIAAAAMAAAAAAABAAIAAAANAAAAAAABAAIAAAAOAAAAAAABAAIAAAAPAAAAAAABAAIAAAAQAAAAAAABAAIAAAD1//r/AAAAAAEAAAD1//v/AAAAAAEAAAD1//z/AAAAAAEAAAD2//3/AAABAAIAAAD3//3/AAABAAIAAAD5////AAABAAIAAAD6////AAABAAQAAAD7/wEAAAABAAIAAAD9/wIAAAABAAIAAAD+/wIAAAABAAIAAAACAPn/AAABAAUAAAAGAPj/AAAAAAUAAAALAPv/AAAAAAUAAAD//wIAAAABAAQAAAD8/wEAAAABAAQAAAD4//3/AAABAAQAAAD6/wAAAAAAAAEAAAD4//7/AAAAAAEAAAD4////AAAAAAIAAAD6/wEAAAAAAAIAAAD8/wIAAAAAAAIAAAAFAAAAAAAAAAQAAAAFAAEAAAACAAEAAAAFAAIAAAACAAEAAAAFAAMAAAACAAEAAAAFAAQAAAACAAEAAAAFAAUAAAACAAEAAAAFAAYAAAACAAEAAAAFAAcAAAACAAIAAAADAAcAAAABAAIAAAAEAAcAAAABAAIAAAAAAAcAAAABAAIAAAD//wcAAAAAAAIAAAD//wMAAAAAAAEAAAD//wQAAAAAAAEAAAD//wUAAAAAAAEAAAD//wYAAAAAAAEAAAD1//3/AAAAAAIAAAD1//n/AAAAAAAAAAACAPf/AAAAAAAAAAACAPj/AAAAAAEAAAAGAPf/AAACAAAAAAAHAPj/AAACAAAAAAALAPr/AAACAAAAAAARAPv/AAACAAAAAAAHAPn/AAACAAEAAAARAPz/AAACAAEAAAARAP//AAACAAEAAAARAAAAAAACAAIAAAA=")
 tile_set = ExtResource("2_71x7e")
-metadata/_edit_lock_ = true
 
 [node name="InnWalls" type="TileMapLayer" parent="Ground" index="2"]
 tile_map_data = PackedByteArray("AAAAAAMAAAAAAAYAAAABAAMAAAAAAAYAAAACAAMAAAACAAcAAAADAAMAAAAAAAYAAAACAAQAAAABAAYAAAD//wMAAAAEAAcAAAAFAAEAAAAGAAcAAAAEAAEAAAAAAAYAAAADAAEAAAAAAAgAAAADAAAAAAABAAYAAAADAP//AAABAAYAAAADAP7/AAABAAYAAAADAP3/AAABAAYAAAADAPv/AAABAAcAAAACAPv/AAAAAAYAAAABAPv/AAAAAAYAAAAAAPv/AAAAAAYAAAD///v/AAAAAAYAAAADAPz/AAABAAYAAAD+//v/AAAAAAYAAAD9//v/AAAAAAYAAAD8//v/AAACAAcAAAD7//v/AAAAAAYAAAD4//r/AAABAAYAAAD4//v/AAAFAAgAAAD6//v/AAAEAAcAAAD8//z/AAABAAYAAAD8//3/AAABAAYAAAD8//7/AAABAAYAAAD8////AAAFAAgAAAD+/wEAAAABAAYAAAD+/wAAAAABAAYAAAD+////AAABAAYAAAD+/wIAAAAFAAgAAAD+//7/AAAAAAcAAAD///7/AAAGAAcAAAD4//n/AAAFAAYAAAAFAPz/AAAAAAcAAAAFAP3/AAABAAYAAAAGAPz/AAAAAAYAAAAHAPz/AAAAAAYAAAAIAPz/AAAAAAYAAAAKAPz/AAABAAgAAAAKAPv/AAABAAYAAAAKAPr/AAAFAAYAAAAJAPz/AAAAAAYAAAAGAP7/AAAAAAYAAAAHAP7/AAAAAAYAAAAFAP7/AAAAAAgAAAAIAP7/AAAAAAYAAAAJAP7/AAAGAAcAAAANAP//AAABAAYAAAANAP7/AAABAAYAAAANAP3/AAAFAAYAAAANAAAAAAAFAAgAAAA=")
 tile_set = ExtResource("3_086xj")
-metadata/_edit_lock_ = true
 
 [node name="ExtWalls" type="TileMapLayer" parent="Ground" index="3"]
 tile_map_data = PackedByteArray("AAD2//n/AAAEAAAAAAD3//n/AAAEAAAAAAD4//n/AAAEAAAAAAD5//n/AAAEAAAAAAD6//n/AAAEAAAAAAD7//n/AAAEAAAAAAD8//n/AAAEAAAAAAD9//n/AAAEAAAAAAD+//n/AAAEAAAAAAD///n/AAAEAAAAAAAAAPn/AAAEAAAAAAABAPn/AAAEAAAAAAADAPf/AAAEAAAAAAAEAPf/AAAEAAAAAAAFAPf/AAAEAAAAAAAHAPr/AAADAAIAAAAIAPr/AAAEAAAAAAAJAPr/AAAEAAAAAAAKAPr/AAAEAAAAAAALAPv/AAADAAIAAAAMAPv/AAAEAAAAAAANAPv/AAAEAAAAAAAOAPv/AAAEAAAAAAAPAPv/AAAEAAAAAAAQAPv/AAAEAAAAAAD1//r/AAADAAEAAAD1//v/AAADAAEAAAD1//z/AAADAAEAAAD4//7/AAADAAEAAAD1//n/AAADAAAAAAACAPf/AAADAAAAAAAGAPf/AAAFAAAAAAALAPr/AAAFAAAAAAARAPv/AAAFAAAAAAARAPz/AAAFAAEAAAARAP//AAAFAAEAAAARAAAAAAAFAAIAAAD1//3/AAADAAIAAAD2//3/AAAEAAIAAAD3//3/AAAEAAIAAAD4//3/AAAFAAAAAAD4////AAADAAIAAAD5////AAAEAAAAAAD6////AAAFAAAAAAD6/wEAAAADAAIAAAD8/wIAAAADAAIAAAD8/wEAAAAFAAAAAAD7/wEAAAAEAAAAAAD9/wIAAAAEAAIAAAD+/wIAAAAEAAIAAAD//wIAAAAFAAAAAAD//wMAAAADAAEAAAD//wQAAAADAAEAAAD//wUAAAADAAEAAAD//wYAAAADAAEAAAAFAAEAAAADAAEAAAAFAAIAAAADAAEAAAAFAAMAAAADAAEAAAAFAAQAAAADAAEAAAAFAAUAAAADAAEAAAAFAAYAAAADAAEAAAAFAAcAAAAFAAIAAAD//wcAAAADAAIAAAAAAAcAAAAEAAAAAAADAAcAAAAEAAAAAAAEAAcAAAAEAAAAAAAFAAAAAAADAAAAAAAGAAAAAAAEAAAAAAAHAAAAAAAEAAAAAAAIAAAAAAAEAAAAAAAJAAAAAAAEAAAAAAAKAAAAAAAEAAAAAAALAAAAAAAEAAAAAAAMAAAAAAAEAAAAAAANAAAAAAAEAAAAAAAOAAAAAAAEAAAAAAAPAAAAAAAEAAAAAAAQAAAAAAAEAAAAAAAHAPj/AAAFAAAAAAAGAPj/AAADAAIAAAAHAPn/AAAFAAEAAAACAPn/AAAFAAIAAAACAPj/AAADAAEAAAD6/wAAAAADAAEAAAA=")
 tile_set = ExtResource("4_xanyd")
-metadata/_edit_lock_ = true
 
 [node name="WallLight" parent="Ground" index="4" instance=ExtResource("6_x0st6")]
 position = Vector2(2057, 2187)
 rotation = 1.5708
-metadata/_edit_lock_ = true
 
 [node name="WallLight2" parent="Ground" index="5" instance=ExtResource("6_x0st6")]
 position = Vector2(-4008, -1914)
 rotation = -1.5708
-metadata/_edit_lock_ = true
 
 [node name="WallLight3" parent="Ground" index="6" instance=ExtResource("6_x0st6")]
 position = Vector2(-731, -2447)
-metadata/_edit_lock_ = true
 
 [node name="WallLight4" parent="Ground" index="7" instance=ExtResource("6_x0st6")]
 position = Vector2(5121, -1663)
-metadata/_edit_lock_ = true
 
 [node name="SimpleLight" parent="Ground" index="8" instance=ExtResource("7_0kuad")]
 position = Vector2(1344, 337)
 rotation = 1.5708
-metadata/_edit_lock_ = true
 
 [node name="SimpleLight2" parent="Ground" index="9" instance=ExtResource("7_0kuad")]
 position = Vector2(1344, -1280)
 rotation = 1.5708
-metadata/_edit_lock_ = true
 
 [node name="SimpleLight3" parent="Ground" index="10" instance=ExtResource("7_0kuad")]
 position = Vector2(-1518, -1739)
-metadata/_edit_lock_ = true
 
 [node name="SimpleLight4" parent="Ground" index="11" instance=ExtResource("7_0kuad")]
 position = Vector2(2944, -1386)
 rotation = -3.14159
-metadata/_edit_lock_ = true
 
 [node name="SimpleLight5" parent="Ground" index="12" instance=ExtResource("7_0kuad")]
 position = Vector2(3585, 120)
 rotation = -3.14159
-metadata/_edit_lock_ = true
 
-[node name="Crate" parent="." index="1" instance=ExtResource("14_jfm54")]
-position = Vector2(1348, 1676)
+[node name="Bed" parent="Ground" index="13" instance=ExtResource("9_o1nno")]
+position = Vector2(-1731, -1509)
 
-[node name="Lights" type="Node2D" parent="." index="3"]
+[node name="Bed2" parent="Ground" index="14" instance=ExtResource("9_o1nno")]
+position = Vector2(1275, -2852)
+rotation = -1.5708
+
+[node name="Bed3" parent="Ground" index="15" instance=ExtResource("9_o1nno")]
+position = Vector2(1696, -2873)
+rotation = -1.5708
+
+[node name="Bed4" parent="Ground" index="16" instance=ExtResource("9_o1nno")]
+position = Vector2(2582, -855)
+rotation = -3.14159
+
+[node name="Toilet" parent="Ground" index="17" instance=ExtResource("10_efnym")]
+position = Vector2(3991, -1866)
+rotation = 1.5708
+
+[node name="Toilet2" parent="Ground" index="18" instance=ExtResource("10_efnym")]
+position = Vector2(3991, -1630)
+rotation = 1.5708
+
+[node name="Toilet3" parent="Ground" index="19" instance=ExtResource("10_efnym")]
+position = Vector2(1947, 691)
+
+[node name="Toilet4" parent="Ground" index="20" instance=ExtResource("10_efnym")]
+position = Vector2(1550, 423)
+rotation = 3.14159
+
+[node name="Toilet5" parent="Ground" index="21" instance=ExtResource("10_efnym")]
+position = Vector2(1821, 423)
+rotation = 3.14159
+
+[node name="Crate" parent="Ground" index="22" instance=ExtResource("14_jfm54")]
+position = Vector2(724, 1498)
+
+[node name="Crate2" parent="Ground" index="23" instance=ExtResource("14_jfm54")]
+position = Vector2(-429, -301)
+rotation = -1.5708
+
+[node name="Crate3" parent="Ground" index="24" instance=ExtResource("14_jfm54")]
+position = Vector2(-3787, -1285)
+rotation = -1.5708
+
+[node name="Crate4" parent="Ground" index="25" instance=ExtResource("14_jfm54")]
+position = Vector2(-3787, -2189)
+rotation = -1.5708
+
+[node name="Crate5" parent="Ground" index="26" instance=ExtResource("14_jfm54")]
+position = Vector2(2970, -7)
+rotation = 3.14159
+
+[node name="Crate6" parent="Ground" index="27" instance=ExtResource("14_jfm54")]
+position = Vector2(5599, -7)
+rotation = 3.14159
+
+[node name="Lights" type="Node2D" parent="." index="2"]
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
@@ -196,18 +239,18 @@ position = Vector2(3330, -1728)
 scale = Vector2(1.656, 1.24412)
 texture = ExtResource("7_j5d1l")
 
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." index="5"]
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." index="4"]
 color = Color(0.512272, 0.466535, 0.38503, 1)
 blend_mode = 1
 metadata/_edit_lock_ = true
 
-[node name="SouthDoor" type="Area2D" parent="." index="6"]
+[node name="SouthDoor" type="Area2D" parent="." index="5"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SouthDoor" index="0"]
 position = Vector2(776.5, 3057)
 shape = SubResource("RectangleShape2D_tkhku")
 
-[node name="Player" parent="." index="7"]
+[node name="Player" parent="." index="6"]
 position = Vector2(769, 2615)
 metadata/_edit_group_ = true
 
@@ -215,8 +258,5 @@ metadata/_edit_group_ = true
 energy = 1.2
 texture = ExtResource("11_tkhku")
 texture_scale = 3.0
-
-[node name="Item" parent="." index="8" instance=ExtResource("13_4iit3")]
-position = Vector2(1416, 2083)
 
 [connection signal="body_entered" from="SouthDoor" to="." method="_on_south_door_body_entered"]
