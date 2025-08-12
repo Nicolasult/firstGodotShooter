@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://bcqpotr80o81n"]
+[gd_scene load_steps=7 format=3 uid="uid://bcqpotr80o81n"]
 
+[ext_resource type="Script" uid="uid://bh75kci7w3rdw" path="res://scenes/userinterface/ui.gd" id="1_bbqyl"]
 [ext_resource type="Texture2D" uid="uid://bwifs1gqeqa3e" path="res://graphics/ui/bullet.png" id="1_eugoy"]
 [ext_resource type="Theme" uid="uid://bww5ht2exkjug" path="res://scenes/userinterface/main_theme.tres" id="1_jsawn"]
 [ext_resource type="Texture2D" uid="uid://csln8a6nyc1b7" path="res://graphics/ui/grenade.png" id="2_yqs5y"]
@@ -7,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bnjvnebote734" path="res://graphics/ui/progress_bar/progress.png" id="5_bbqyl"]
 
 [node name="UI" type="CanvasLayer"]
+script = ExtResource("1_bbqyl")
 
 [node name="LaserCounter" type="Control" parent="."]
 layout_mode = 3
