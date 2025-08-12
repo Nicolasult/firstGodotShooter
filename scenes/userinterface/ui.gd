@@ -8,10 +8,13 @@ var red: Color = Color(0.9, 0, 0, 1)
 @onready var grenade_label: Label = $"GrenadeCounter/VBoxContainer/Grenade Amount"
 @onready var laser_icon: TextureRect = $LaserCounter/VBoxContainer/TextureRect
 @onready var grenade_icon: TextureRect = $GrenadeCounter/VBoxContainer/TextureRect
+@onready var health_bar: TextureProgressBar = $MarginContainer/TextureProgressBar
 
 func _ready():
+	Globals.connect("health_change", update_health_text)
 	update_laser_text()
 	update_grenade_text()
+	update_health_text()
 
 func update_laser_text():
 	laser_label.text = str(Globals.laser_amount)
@@ -29,3 +32,5 @@ func update_color(amount: int, label: Label, icon: TextureRect) -> void:
 		label.modulate = green
 		icon.modulate = green
 		
+func update_health_text():
+	health_bar.value = Globals.health

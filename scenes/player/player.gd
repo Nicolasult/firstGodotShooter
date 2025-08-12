@@ -53,5 +53,7 @@ func _on_grenade_timer_timeout() -> void:
 func add_item(type: String) -> void:
 	if type == "laser":
 		Globals.laser_amount += 5
+	if type == "grenade":
+		Globals.grenade_amount += 2
 	update_stats.emit()
 		

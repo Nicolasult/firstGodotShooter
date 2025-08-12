@@ -2,7 +2,7 @@ extends Area2D
 
 var rotation_speed: int = 4
 var available_options = ["laser", "laser", "laser", "grenade", "health"]
-var type = available_options[randi()%len(available_options)]
+var type = "health"#available_options[randi()%len(available_options)]
 
 func _ready():
 	if type == "laser":
@@ -15,7 +15,8 @@ func _ready():
 func _process(delta: float) -> void:
 	rotation += rotation_speed * delta
 
-
 func _on_body_entered(body: Node2D) -> void:
 	body.add_item(type)
+	if type == "health":
+		Globals.health += 10
 	queue_free()
