@@ -65,10 +65,14 @@ sources/1 = SubResource("TileSetAtlasSource_ddemh")
 [node name="Outside" instance=ExtResource("1_2s4ok")]
 script = ExtResource("2_xqqjy")
 
-[node name="Ground" parent="." index="0"]
+[node name="Gate" parent="." index="1" instance=ExtResource("2_x73sx")]
+position = Vector2(522, -744)
+
+[node name="Ground" parent="." index="2"]
 metadata/_edit_group_ = true
 
 [node name="Soil" type="Sprite2D" parent="Ground" index="0"]
+z_index = -2
 texture_repeat = 2
 position = Vector2(724, 410)
 texture = ExtResource("2_qvsb0")
@@ -130,15 +134,12 @@ position = Vector2(-2011, 3112)
 scale = Vector2(1.2, 1.2)
 autoplay = "default"
 
-[node name="Gate" parent="." index="1" instance=ExtResource("2_x73sx")]
-position = Vector2(522, -744)
-
-[node name="Items" parent="." index="2"]
+[node name="Items" parent="." index="3"]
 metadata/_edit_lock_ = true
 
-[node name="Player" parent="." index="4"]
+[node name="Player" parent="." index="5"]
 position = Vector2(561, 302)
 
+[connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]
 [connection signal="player_entered" from="Ground/House" to="." method="_on_house_player_entered"]
 [connection signal="player_exited" from="Ground/House" to="." method="_on_house_player_exited"]
-[connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]
