@@ -95,7 +95,6 @@ texture = ExtResource("6_uaeil")
 [node name="Moss6" type="Sprite2D" parent="Ground" index="5"]
 position = Vector2(-491, 432)
 rotation = 0.238015
-scale = Vector2(1, 1)
 texture = ExtResource("7_bjulg")
 
 [node name="TileMap" type="Node2D" parent="Ground" index="6"]
