@@ -130,4 +130,7 @@ autoplay = "default"
 [node name="Gate" parent="." index="1" instance=ExtResource("2_x73sx")]
 position = Vector2(522, -744)
 
+[node name="Player" parent="." index="3"]
+position = Vector2(561, 302)
+
 [connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]
