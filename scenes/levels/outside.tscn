@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://xukui2lmthuv" path="res://scenes/houses/house.tscn" id="10_cnio0"]
 [ext_resource type="PackedScene" uid="uid://gsbgojkjtnc2" path="res://scenes/objects/steam_vent.tscn" id="11_6u4a0"]
 [ext_resource type="PackedScene" uid="uid://c7s8g63sintvn" path="res://scenes/objects/light_fan_animation.tscn" id="12_oe17f"]
-[ext_resource type="PackedScene" uid="uid://ct1hvka4nxlba" path="res://scenes/enemies/scout.tscn" id="15_ex6t8"]
+[ext_resource type="PackedScene" uid="uid://d2hdl6vxkal84" path="res://scenes/enemies/bug.tscn" id="15_ex6t8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lbwx5"]
 resource_name = "walls"
@@ -138,8 +138,8 @@ autoplay = "default"
 [node name="Items" parent="." index="4"]
 metadata/_edit_lock_ = true
 
-[node name="Scout" parent="Enemies" index="0" instance=ExtResource("15_ex6t8")]
-position = Vector2(1221, 654)
+[node name="Bug" parent="Enemies" index="0" instance=ExtResource("15_ex6t8")]
+position = Vector2(1699, 933)
 
 [node name="Player" parent="." index="7"]
 position = Vector2(561, 302)
