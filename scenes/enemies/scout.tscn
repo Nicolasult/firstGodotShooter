@@ -1,7 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://ct1hvka4nxlba"]
+[gd_scene load_steps=7 format=3 uid="uid://ct1hvka4nxlba"]
 
 [ext_resource type="Texture2D" uid="uid://b2qmrej8carxp" path="res://graphics/enemies/scout.png" id="1_i70sm"]
 [ext_resource type="Script" uid="uid://cdlk6n54b2qhk" path="res://scenes/enemies/scout.gd" id="1_ns734"]
+[ext_resource type="Shader" uid="uid://cqg3aw3u1lvhu" path="res://scenes/enemies/scout.gdshader" id="2_08kc0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t8bpu"]
+shader = ExtResource("2_08kc0")
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ns734"]
 radius = 56.0
@@ -16,6 +20,7 @@ collision_mask = 11
 script = ExtResource("1_ns734")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_t8bpu")
 position = Vector2(28, 30)
 rotation = 1.5708
 texture = ExtResource("1_i70sm")
