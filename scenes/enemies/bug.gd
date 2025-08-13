@@ -4,12 +4,24 @@ var active: bool = false
 var vulnerable: bool = true
 var player_near: bool = false
 var speed: int = 300
+var health: int = 20
+
+func hit():
+	if vulnerable:
+		vulnerable = false
+		$Timers/HitTimer.start()
+		health -= 10
+		$AnimatedSprite2D.material.set_shader_parameter("progress", 1)
+		$Node2D/HitParticles.emitting = true
+	if health <= 0:
+		await get_tree().create_timer(0.2).timeout
+		queue_free()
 
 func _process(_delta):
 	var direction = (Globals.player_pos - position).normalized()
 	velocity = direction * speed
 	
-	if active:
+	if active and health > 0:
 		move_and_slide()
 		look_at(Globals.player_pos)
 
@@ -32,3 +44,11 @@ func _on_notice_area_body_exited(_body: Node2D) -> void:
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if player_near:
 		Globals.health -= 10
+		$Timers/AttackTimer.start()
+
+func _on_attack_timer_timeout() -> void:
+	$AnimatedSprite2D.play("attack")
+
+func _on_hit_timer_timeout() -> void:
+	vulnerable = true
+	$AnimatedSprite2D.material.set_shader_parameter("progress", 0)

@@ -1,7 +1,8 @@
-[gd_scene load_steps=36 format=3 uid="uid://d2hdl6vxkal84"]
+[gd_scene load_steps=43 format=3 uid="uid://d2hdl6vxkal84"]
 
 [ext_resource type="Script" uid="uid://cgyi3xv3ayu4b" path="res://scenes/enemies/bug.gd" id="1_jahts"]
 [ext_resource type="Texture2D" uid="uid://b6s62jpbsdcdo" path="res://graphics/enemies/bug/attack/00010.png" id="1_xtffu"]
+[ext_resource type="Shader" uid="uid://b8hr6dqippuvm" path="res://scenes/enemies/bug.gdshader" id="2_abc4i"]
 [ext_resource type="Texture2D" uid="uid://b8e7jb5ttyv6n" path="res://graphics/enemies/bug/attack/00011.png" id="2_jahts"]
 [ext_resource type="Texture2D" uid="uid://cypdckkp1fjw3" path="res://graphics/enemies/bug/attack/00012.png" id="3_abc4i"]
 [ext_resource type="Texture2D" uid="uid://btjuvt3oy3kg4" path="res://graphics/enemies/bug/attack/00013.png" id="4_xww0a"]
@@ -31,10 +32,16 @@
 [ext_resource type="Texture2D" uid="uid://dsve43cigh3ep" path="res://graphics/enemies/bug/walk/00006.png" id="28_88uy3"]
 [ext_resource type="Texture2D" uid="uid://dxmyvx6twbaef" path="res://graphics/enemies/bug/walk/00007.png" id="29_5u6gl"]
 [ext_resource type="Texture2D" uid="uid://dbnr03l3ojqgm" path="res://graphics/enemies/bug/walk/00008.png" id="30_8phhj"]
+[ext_resource type="Texture2D" uid="uid://b382wburtf61s" path="res://graphics/explosions/grunge.png" id="33_xww0a"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xtffu"]
 radius = 59.0
 height = 198.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xww0a"]
+shader = ExtResource("2_abc4i")
+shader_parameter/color = Color(0.996078, 0.890196, 0.870588, 1)
+shader_parameter/progress = 0.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ps8cy"]
 animations = [{
@@ -145,37 +152,89 @@ radius = 909.045
 [sub_resource type="CircleShape2D" id="CircleShape2D_jahts"]
 radius = 143.0
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_uc11a"]
+particles_animation = true
+particles_anim_h_frames = 6
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_xww0a"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.743119, 0.845606), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_uc11a"]
+curve = SubResource("Curve_xww0a")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ey6sa"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 4.0
+direction = Vector3(1, 1, 0)
+spread = 120.0
+initial_velocity_min = 60.0
+initial_velocity_max = 120.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.2
+scale_max = 0.5
+scale_curve = SubResource("CurveTexture_uc11a")
+color = Color(0.239216, 0.282353, 0.101961, 0.533333)
+anim_offset_max = 1.0
+
 [node name="Bug" type="CharacterBody2D" groups=["Entity"]]
 collision_layer = 2
 collision_mask = 11
 script = ExtResource("1_jahts")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_xtffu")
 debug_color = Color(0.292737, 0.923528, 0.489401, 0.42)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_xww0a")
 rotation = 1.5708
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_ps8cy")
 animation = &"attack"
 
 [node name="NoticeArea" type="Area2D" parent="."]
+visible = false
 collision_layer = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NoticeArea"]
 shape = SubResource("CircleShape2D_xtffu")
 
 [node name="AttackArea" type="Area2D" parent="."]
+visible = false
 collision_layer = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
 shape = SubResource("CircleShape2D_jahts")
 debug_color = Color(0.884007, 0.203269, 0.658802, 0.42)
 
+[node name="Timers" type="Node" parent="."]
+
+[node name="AttackTimer" type="Timer" parent="Timers"]
+wait_time = 0.5
+one_shot = true
+
+[node name="HitTimer" type="Timer" parent="Timers"]
+wait_time = 0.2
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="HitParticles" type="GPUParticles2D" parent="Node2D"]
+material = SubResource("CanvasItemMaterial_uc11a")
+emitting = false
+texture = ExtResource("33_xww0a")
+one_shot = true
+process_material = SubResource("ParticleProcessMaterial_ey6sa")
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="NoticeArea" to="." method="_on_notice_area_body_entered"]
 [connection signal="body_exited" from="NoticeArea" to="." method="_on_notice_area_body_exited"]
 [connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]
 [connection signal="body_exited" from="AttackArea" to="." method="_on_attack_area_body_exited"]
+[connection signal="timeout" from="Timers/AttackTimer" to="." method="_on_attack_timer_timeout"]
+[connection signal="timeout" from="Timers/HitTimer" to="." method="_on_hit_timer_timeout"]
