@@ -3,6 +3,7 @@ extends CharacterBody2D
 var active: bool = false
 var vulnerable: bool = true
 var player_near: bool = false
+
 var speed: int = 300
 var health: int = 20
 
