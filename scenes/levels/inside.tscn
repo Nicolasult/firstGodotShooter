@@ -442,7 +442,7 @@ metadata/_edit_group_ = true
 position = Vector2(776.5, 3057)
 shape = SubResource("RectangleShape2D_tkhku")
 
-[node name="Player" parent="." index="8"]
+[node name="Player" parent="." index="9"]
 position = Vector2(769, 2615)
 metadata/_edit_group_ = true
 
