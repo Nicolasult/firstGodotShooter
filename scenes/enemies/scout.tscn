@@ -6,6 +6,8 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_t8bpu"]
 shader = ExtResource("2_08kc0")
+shader_parameter/color = Color(0.997287, 0.88933, 0.870069, 1)
+shader_parameter/progress = 0.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ns734"]
 radius = 56.0
@@ -31,6 +33,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_ns734")
 
 [node name="AttackArea" type="Area2D" parent="."]
+visible = false
 collision_layer = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
@@ -49,7 +52,7 @@ position = Vector2(131, 16)
 [node name="LaserTimer" type="Timer" parent="Timers"]
 
 [node name="HitTimer" type="Timer" parent="Timers"]
-wait_time = 0.5
+wait_time = 0.3
 one_shot = true
 
 [connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]
