@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://c2yg3gdanj354"]
+[gd_scene load_steps=5 format=3 uid="uid://c2yg3gdanj354"]
 
 [ext_resource type="Script" uid="uid://cw7a15m6wiowg" path="res://scenes/enemies/drone.gd" id="1_y3ws1"]
 [ext_resource type="Texture2D" uid="uid://b0sawiuo6jwq" path="res://graphics/enemies/drone.png" id="1_y6iu8"]
@@ -6,7 +6,11 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_y6iu8"]
 radius = 70.2353
 
-[node name="Drone" type="CharacterBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_y3ws1"]
+radius = 1258.41
+
+[node name="Drone" type="CharacterBody2D" groups=["Entity"]]
+rotation = 1.5708
 collision_layer = 2
 collision_mask = 15
 script = ExtResource("1_y3ws1")
@@ -17,3 +21,15 @@ texture = ExtResource("1_y6iu8")
 [node name="DroneCollisionShape" type="CollisionShape2D" parent="."]
 rotation = 1.5708
 shape = SubResource("CircleShape2D_y6iu8")
+
+[node name="NoticeArea" type="Area2D" parent="."]
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NoticeArea"]
+shape = SubResource("CircleShape2D_y3ws1")
+
+[node name="HitTimer" type="Timer" parent="."]
+wait_time = 0.2
+
+[connection signal="body_entered" from="NoticeArea" to="." method="_on_notice_area_body_entered"]
+[connection signal="timeout" from="HitTimer" to="." method="_on_hit_timer_timeout"]
