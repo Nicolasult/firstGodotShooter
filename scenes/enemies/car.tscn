@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dqffixdaqf1oe"]
+[gd_scene load_steps=9 format=3 uid="uid://dqffixdaqf1oe"]
 
 [ext_resource type="Texture2D" uid="uid://c3tsic5mui85g" path="res://graphics/car/main.png" id="1_q40b2"]
 [ext_resource type="Script" uid="uid://c2ihy8c88v1lf" path="res://scenes/enemies/car.gd" id="1_ytjck"]
 [ext_resource type="Texture2D" uid="uid://dlqnk30eje1ra" path="res://graphics/car/turret.png" id="3_ld76f"]
+[ext_resource type="Texture2D" uid="uid://dks2tsaft6bp8" path="res://graphics/explosions/gun.png" id="4_86l62"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ld76f"]
 radius = 881.028
@@ -132,6 +133,18 @@ points = PackedVector2Array(1, 1)
 closed = true
 width = 1.0
 default_color = Color(0.531083, 0.0435595, 0.082992, 1)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Turret"]
+position = Vector2(173, -28)
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_86l62")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Turret"]
+position = Vector2(173, 27)
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_86l62")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
