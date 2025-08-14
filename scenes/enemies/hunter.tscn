@@ -8,12 +8,12 @@ radius = 33.0
 height = 212.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vu6l5"]
-radius = 717.084
+radius = 1259.88
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_07510"]
 radius = 163.0
 
-[node name="Hunter" type="CharacterBody2D" groups=["Entity"]]
+[node name="Hunter" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 15
 script = ExtResource("1_07510")
@@ -40,5 +40,11 @@ debug_color = Color(0.855347, 0.331878, 0.419494, 0.42)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 
+[node name="Timer" type="Timer" parent="."]
+
+[node name="NavigationTimer" type="Timer" parent="Timer"]
+autostart = true
+
 [connection signal="body_entered" from="NoticeArea" to="." method="_on_notice_area_body_entered"]
 [connection signal="body_exited" from="NoticeArea" to="." method="_on_notice_area_body_exited"]
+[connection signal="timeout" from="Timer/NavigationTimer" to="." method="_on_navigation_timer_timeout"]
