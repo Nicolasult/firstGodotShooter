@@ -34,4 +34,10 @@ func _on_notice_area_body_entered(_body: Node2D) -> void:
 
 func _on_notice_area_body_exited(_body: Node2D) -> void:
 	player_near = false
+	$AnimationPlayer.pause()
+	var tween = create_tween()
+	tween.set_parallel(true)
+	tween.tween_property(line1, "width", 0, randf_range(0.1, 0.5))
+	tween.tween_property(line2, "width", 0, randf_range(0.1, 0.5))
+	await tween.finished
 	$AnimationPlayer.stop()
