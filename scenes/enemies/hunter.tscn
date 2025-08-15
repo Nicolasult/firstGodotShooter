@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bn0a046oibfc1"]
+[gd_scene load_steps=6 format=3 uid="uid://bn0a046oibfc1"]
 
 [ext_resource type="Script" uid="uid://chl8052n3gohy" path="res://scenes/enemies/hunter.gd" id="1_07510"]
 [ext_resource type="Texture2D" uid="uid://cmd2knif1bkby" path="res://graphics/enemies/hunter/hunter.png" id="1_vu6l5"]
-[ext_resource type="Texture2D" uid="uid://dcmco1adtersp" path="res://graphics/enemies/hunter/parts/torso.png" id="3_kw5xw"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vu6l5"]
 radius = 33.0
@@ -49,11 +48,6 @@ debug_color = Color(0.855347, 0.331878, 0.419494, 0.42)
 
 [node name="NavigationTimer" type="Timer" parent="Timers"]
 autostart = true
-
-[node name="Skeleton2D" type="Skeleton2D" parent="."]
-
-[node name="Torso" type="Sprite2D" parent="Skeleton2D"]
-texture = ExtResource("3_kw5xw")
 
 [connection signal="body_entered" from="NoticeArea" to="." method="_on_notice_area_body_entered"]
 [connection signal="body_exited" from="NoticeArea" to="." method="_on_notice_area_body_exited"]
